@@ -1,0 +1,122 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: rgba(0,0,0,0.9);
+	color: white;
+}
+.showcase::after{
+	content:"";
+	background-image: url("../cover.jpeg");
+	width:100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	display:block;
+	z-index: 1;
+	transition: .5s;
+	filter: blur(10px);
+}
+.showcase:hover::after{
+	filter: blur(0px);
+}
+.showcase:hover .logo{
+	filter: blur(1px);
+}
+.showcase .HeaderContainer .logo{
+	position: absolute;
+	text-align: center;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width:400px;
+}
+.showcase .HeaderContainer .logo .text{
+	margin-top: -15%;
+}
+.showcase .HeaderContainer .logo .text h2{
+	font-size: 35px;
+	margin:0;
+	padding:0;
+}
+.services{
+	text-align: center;
+}
+.services .grid-3{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3,1fr);
+	padding: 2rem;
+
+}
+.servicess{
+	background-color: white;
+	color: #333;
+	padding: 1rem;
+}
+.servicess .grid-2{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	padding: 2rem;
+}
+.servicess .grid-2 .aboutlogo{
+	margin-left:30%;
+}
+.servicess .grid-2 .abouttext{
+	margin-top:5%;
+}
+.servicess .grid-2 .abouttext h3{
+	font-size: 25px;
+	margin:0;
+	padding:0;
+}
+.servicess .grid-2 .abouttext p{
+	font-size: 18px;
+	margin:0;
+	padding:0;
+}
+footer{
+	text-align: center;
+	margin:0;	
+	padding: 2px;
+
+}
+
+/************SmartPhone*******************/
+@media (max-width: 560px){
+	.showcase::after{
+		height: 50vh;
+	}
+	.showcase .HeaderContainer .logo{
+	position: absolute;
+	top: 25%;
+}
+	.showcase .HeaderContainer .logo p{
+		display: none;
+	}
+	.services .grid-3{
+	display: grid;
+	grid-template-columns: 1fr;
+	}
+	.services .grid-3 div{
+	border-bottom: 1px dotted white;
+	}
+	.servicess .grid-2{
+	display: grid;
+	grid-template-columns: 1fr;
+	}
+	.servicess .grid-2 .aboutlogo {
+	margin-left:20%;
+	}
+	.servicess .grid-2 .abouttext {
+	text-align: center;
+	padding: 5px;
+	}
+
+}
+/********************LandScape*******************/
+@media (max-height: 500px){
+	.showcase .HeaderContainer .logo .text{
+		display: none;
+	}
+}
